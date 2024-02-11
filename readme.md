@@ -1,4 +1,4 @@
-# Blog - REST API
+# API POLLS + WEBSOCKET
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=api&message=rest&color=blueviolet&style=for-the-badge"/>
@@ -17,35 +17,23 @@
 
 ## About
 
-Minimalistic blog system. Create, share, and interact with posts. Features include categories, tags, likes, comments, user profiles, and reading lists.
+This system offers an API for creating real-time polls using Node.js and WebSockets to transmit results instantly to users. With this platform, users can create, share, and interact with polls dynamically and collaboratively.
 
-<img src="./src/assets/Captura de ecrã de 2024-02-02 10-40-48.png" />
+<img src="./public/API.png" />
 
 
 ## Requirements
 
   - [x] **Functional Requirements (FR):**
 
-1. *User Authentication:*
-    - [x]  User registration.
-    - [x]  Login and logout.
-    - [x]  Password recovery.
-    - [x]  Refresh Token
-2. *Post Management:*
-    - [x]  Creation, editing, and deletion of posts.
-    - [x]  Support for text, images, and other types of media.
-    - [x]  Option to set posts as public, private, or drafts.
-    - [x]  Comments on posts.
-    - [x]  Allow authenticated users to edit and delete their own comments.
-    - [x]  Allow users to create reading lists.
-    - [x]  Like and favorite posts.
-3. *Categories and Tags:*
-    - [x]  Ability to categorize posts.
-    - [x]  Addition of tags to facilitate search.
-4. *Search:*
-    - [x]  Search by title, author, category, etc.
+1. *Poll Creation:* Users can easily create polls with questions and answer options.
 
-    
+2. *Real-time Results Transmission:* Using WebSockets, poll results are updated and transmitted instantly to all connected users.
+
+3. *Interactive Participation:* Users can vote in polls and see results in real-time as votes occur.
+
+4. *Poll Management:* Functionality to delete and view the history of created polls.
+
 
   - [x] **Non-Functional Requirements (NFR):**
 
@@ -60,10 +48,10 @@ Before you begin, you will need to have the following tools installed on your ma
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Josemar-cafumana/blog_api.git
+$ git clone https://github.com/Josemar-cafumana/api-polls.git
 
 # Navigate to the project's folder in the terminal/cmd
-$ cd blog_api
+$ cd api-polls
 
 # Install dependencies
 $ npm install
@@ -72,6 +60,14 @@ $ yarn
 
 # Configure environment variables
 $ cp .env.example .env
+
+# Execute Docker Compose to start the necessary services
+$ docker-compose up -d
+
+# Execute migrations with Prisma
+$ npx prisma migrate dev
+# If you prefer using Yarn, execute the following command
+$ yarn prisma migrate dev
 
 # Run the application in development mode
 $ npm run dev
@@ -84,24 +80,24 @@ $ yarn dev
 
 ## Technologies
 
-- [Node.js](https://nodejs.org/en/): A JavaScript runtime for server-side execution.
+- [Node.js](https://nodejs.org/en/): A JavaScript runtime environment for server-side execution.
 
 - [TypeScript](https://www.typescriptlang.org/): A superset of JavaScript that adds optional static typing.
 
 - [Prisma](https://www.prisma.io/): A database ORM (Object-Relational Mapping) for Node.js and TypeScript.
 
-- [JWT (JSON Web Tokens)](https://jwt.io/): A standard for creating JSON-based access tokens for authentication.
+- [Docker](https://www.docker.com/): A platform for developing, shipping, and running applications in containers.
 
-- [Nodemailer](https://nodemailer.com/): A module for sending emails with Node.js.
+- [Redis](https://redis.io/): An open-source, in-memory data store used for caching and other real-time data purposes.
 
-- [Cloudinary](https://cloudinary.com/): A cloud-based media management service.
+- [PostgreSQL](https://www.postgresql.org/): An open-source relational database management system.
 
-- [Express.js](https://expressjs.com/): A web framework for Node.js that simplifies web application development.
+- [WebSockets](https://developer.mozilla.org/pt-BR/docs/WebSockets): A bidirectional communication protocol, allowing real-time interactions between clients and servers.
 
-- [MySQL](https://www.mysql.com/): An open-source relational database management system.
+- [Fastify](https://www.fastify.io/): An extremely fast and efficient web framework for Node.js.
 
 
-These technologies were chosen to provide an efficient development experience, facilitating the creation of a robust and modern application, including database features, authentication, email sending, and media management.
+These technologies were chosen to provide an efficient development experience, facilitating the creation of a robust and modern application.
 
 ## Author
 
